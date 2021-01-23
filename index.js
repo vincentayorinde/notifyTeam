@@ -13,10 +13,11 @@ bot.on('start', () => {
     const currentDate = new Date();
     const day = currentDate.getDay();
 
-    if([6, 7].includes(day)) return;
+    if([6, 0].includes(day)) return;
 
-    const hour = currentDate.getHours();
-    if(hour === 9) bot.postMessageToChannel('general', message);
+    // const hour = currentDate.getHours();
+    // if(hour === 9) bot.postMessageToChannel('general', message);
+    bot.postMessageToChannel('general', message);
 });
 
 const message = `Hi Nobles,
