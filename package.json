@@ -1,0 +1,15 @@
+{
+  "name": "notifyteam",
+  "version": "1.0.0",
+  "description": "stack bot to give reminders",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Vinay",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "slackbots": "^1.2.0"
+  }
+}
