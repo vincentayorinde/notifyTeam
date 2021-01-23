@@ -1,5 +1,6 @@
 const SlackBot = require('slackbots');
 const env = require('dotenv');
+const logger = require('winston')
 
 env.config()
 const bot = new SlackBot({
@@ -10,14 +11,18 @@ const bot = new SlackBot({
 // Start handler
 
 bot.on('start', () => {
+    logger.info('Bot execution started...')
     const currentDate = new Date();
     const day = currentDate.getDay();
 
-    if([6, 0].includes(day)) return;
-
+    if([6, 0].includes(day)) {
+        logger.info(`Today is ${currentDate}. Bot will not run.`)
+        return;
+    }
     // const hour = currentDate.getHours();
     // if(hour === 9) bot.postMessageToChannel('general', message);
     bot.postMessageToChannel('general', message);
+    logger.info(`Today is ${currentDate}. Bot has been triggered.`)
 });
 
 const message = `Hi Nobles,
