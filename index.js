@@ -20,10 +20,6 @@ bot.on('start', () => {
         return;
     }
     const hour = currentDate.getHours();
-<<<<<<< HEAD
-=======
-    console.log('the hour', hour)
->>>>>>> 5583903720f202d2fd2ad1efafa25873bb53e777
     if(hour === 10) bot.postMessageToChannel('general', message);
     logger.info(`Today is ${currentDate}. Bot has been triggered.`);
 });
