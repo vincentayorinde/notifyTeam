@@ -23,7 +23,7 @@ bot.on('start', () => {
   logger.info(`Today is ${currentDate}...`);
 
   if (hour === 10) {
-    bot.postMessageToChannel('general', message);
+    bot.postMessageToChannel('standups', message);
     logger.info(`Today is ${currentDate}. Bot has been triggered.`);
   }
 });
